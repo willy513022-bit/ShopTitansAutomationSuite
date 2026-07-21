@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ST-012",
+    "rule": "Craft and Fusion share one production queue.",
+    "status": "VERIFIED_BY_VIDEO"
+  },
+  {
+    "id": "ST-013",
+    "rule": "The badge on the production button shows remaining shared slots.",
+    "status": "VERIFIED_BY_VIDEO"
+  },
+  {
+    "id": "ST-014",
+    "rule": "Completed but uncollected products continue to occupy slots.",
+    "status": "VERIFIED_BY_VIDEO"
+  },
+  {
+    "id": "ST-015",
+    "rule": "Collecting a completed product increases the remaining-slot badge.",
+    "status": "VERIFIED_BY_VIDEO"
+  },
+  {
+    "id": "ST-016",
+    "rule": "Craft and Fusion are modes of the same Production UI.",
+    "status": "VERIFIED_BY_VIDEO"
+  },
+  {
+    "id": "ST-017",
+    "rule": "After switching modes, Vision must verify the displayed mode before selecting an item.",
+    "status": "DESIGN_RULE"
+  }
+]

@@ -1,0 +1,237 @@
+[
+  {
+    "worker": "Blacksmith",
+    "name": "Wallace",
+    "level_required": null,
+    "building_prerequisite": null,
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Squire Sword"
+    ],
+    "_excel_row": 2
+  },
+  {
+    "worker": "Tailor",
+    "name": "Julia",
+    "level_required": 2,
+    "building_prerequisite": null,
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Leather Gloves",
+      "Shirt",
+      "Leather Boots"
+    ],
+    "_excel_row": 3
+  },
+  {
+    "worker": "Carpenter",
+    "name": "Allan",
+    "level_required": 3,
+    "building_prerequisite": null,
+    "gold_cost": 1250,
+    "gem_cost": 25,
+    "blueprint_unlocks": [
+      "Cudgel",
+      "Carved Branch"
+    ],
+    "_excel_row": 4
+  },
+  {
+    "worker": "Herbalist",
+    "name": "Maribel",
+    "level_required": 5,
+    "building_prerequisite": null,
+    "gold_cost": 5000,
+    "gem_cost": 100,
+    "blueprint_unlocks": [
+      "Mintyleaf Herb"
+    ],
+    "_excel_row": 5
+  },
+  {
+    "worker": "Wizard",
+    "name": "Grimar",
+    "level_required": 16,
+    "building_prerequisite": "Apothecary Lv. 3",
+    "gold_cost": 50000,
+    "gem_cost": 250,
+    "blueprint_unlocks": [
+      "Scroll of Sparks",
+      "Ember Element",
+      "Bubble Element"
+    ],
+    "_excel_row": 6
+  },
+  {
+    "worker": "Jeweler",
+    "name": "Katarina",
+    "level_required": 12,
+    "building_prerequisite": "Tailor Workshop Lv. 5",
+    "gold_cost": 25000,
+    "gem_cost": 150,
+    "blueprint_unlocks": [
+      "Iron Ring",
+      "Alloy Loop",
+      "Ruby Ring"
+    ],
+    "_excel_row": 7
+  },
+  {
+    "worker": "Priestess",
+    "name": "Freyja",
+    "level_required": 25,
+    "building_prerequisite": "Wood Workshop Lv. 5",
+    "gold_cost": 250000,
+    "gem_cost": 500,
+    "blueprint_unlocks": [
+      "Memento",
+      "Jade Pendant",
+      "Iron Bond",
+      "Ram Spirit"
+    ],
+    "_excel_row": 8
+  },
+  {
+    "worker": "Master",
+    "name": "Theodore",
+    "level_required": 30,
+    "building_prerequisite": "Smithy Lv. 7",
+    "gold_cost": 500000,
+    "gem_cost": 750,
+    "blueprint_unlocks": [],
+    "_excel_row": 9
+  },
+  {
+    "worker": "Scholar",
+    "name": "Evelyn",
+    "level_required": 15,
+    "building_prerequisite": "Academy",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Baton",
+      "Elvenwood Wand",
+      "Hexer's Wand",
+      "Chipped Runestone"
+    ],
+    "_excel_row": 10
+  },
+  {
+    "worker": "Engineer",
+    "name": "Roxanne",
+    "level_required": 24,
+    "building_prerequisite": "Laboratory",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Light Crossbow",
+      "Hand Crossbow",
+      "Arbalest",
+      "Pellet Gun",
+      "Handgun",
+      "Smoothbore"
+    ],
+    "_excel_row": 11
+  },
+  {
+    "worker": "Sun Dragon",
+    "name": "Sondra",
+    "level_required": 27,
+    "building_prerequisite": "Sol Tower",
+    "gold_cost": 375000,
+    "gem_cost": 575,
+    "blueprint_unlocks": [],
+    "_excel_row": 12
+  },
+  {
+    "worker": "Moon Dragon",
+    "name": "Mundra",
+    "level_required": 27,
+    "building_prerequisite": "Luna Tower",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Lesser Moonstone",
+      "Mundra's Amulet"
+    ],
+    "_excel_row": 13
+  },
+  {
+    "worker": "Summoner",
+    "name": "Yolanda",
+    "level_required": 23,
+    "building_prerequisite": "Summoner's Tent",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Troublin",
+      "Adventurer Cape"
+    ],
+    "_excel_row": 14
+  },
+  {
+    "worker": "Cook",
+    "name": "Tutu Mano",
+    "level_required": 20,
+    "building_prerequisite": "Apothecary Lv. 7",
+    "gold_cost": 100000,
+    "gem_cost": 150,
+    "blueprint_unlocks": [
+      "Bacon and Eggs"
+    ],
+    "_excel_row": 15
+  },
+  {
+    "worker": "Baker",
+    "name": "Kaipo",
+    "level_required": 21,
+    "building_prerequisite": "Bakery",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Cookie Plate"
+    ],
+    "_excel_row": 16
+  },
+  {
+    "worker": "Bard",
+    "name": "Yohan",
+    "level_required": 18,
+    "building_prerequisite": "Amphitheatre",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Triangle",
+      "Gleaming Aura"
+    ],
+    "_excel_row": 17
+  },
+  {
+    "worker": "Veteran",
+    "name": "Roland",
+    "level_required": 32,
+    "building_prerequisite": "Military Camp",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Twin Khopesh",
+      "Swamp Knapsack"
+    ],
+    "_excel_row": 18
+  },
+  {
+    "worker": "Storm Elemental",
+    "name": "Zephyr",
+    "level_required": 35,
+    "building_prerequisite": "Wind Nexus",
+    "gold_cost": null,
+    "gem_cost": null,
+    "blueprint_unlocks": [
+      "Primitive Idol",
+      "Natural Toxifier"
+    ],
+    "_excel_row": 19
+  }
+]

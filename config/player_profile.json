@@ -1,0 +1,10 @@
+{
+  "mode": "COLLECTOR",
+  "collection_first": true,
+  "legendary": "KEEP",
+  "minimum_gold": 2000000000,
+  "minimum_energy": 1500,
+  "use_diamond": false,
+  "avoid_material_overflow": true,
+  "pet_food": "NORMAL"
+}

@@ -1,0 +1,16 @@
+{
+  "event_id": "spin_ticket_bubble",
+  "display_name": "Spin Ticket Bubble",
+  "category": "interrupt",
+  "priority": 85,
+  "interrupt": true,
+  "trigger": {
+    "screen_hint": "spin_ticket_bubble"
+  },
+  "actions": [
+    {
+      "type": "OPEN_SPIN_MACHINE"
+    }
+  ],
+  "notes": "Observed in user-provided gameplay video. Clicking the ticket bubble navigates to the spin machine."
+}

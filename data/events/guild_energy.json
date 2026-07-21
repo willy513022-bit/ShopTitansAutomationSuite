@@ -1,0 +1,19 @@
+{
+  "event_id": "guild_energy",
+  "display_name": "Guild Member Energy",
+  "category": "interrupt",
+  "priority": 100,
+  "interrupt": true,
+  "trigger": {
+    "screen_hint": "guild_member_energy"
+  },
+  "actions": [
+    {
+      "type": "COLLECT"
+    },
+    {
+      "type": "RETURN_TO_PREVIOUS"
+    }
+  ],
+  "notes": "Observed in user-provided gameplay video."
+}

@@ -1,0 +1,28 @@
+{
+  "mode": "COLLECTOR",
+  "collection": {
+    "keep_legendary_forever": true,
+    "keep_non_normal_until_collection_complete": true,
+    "permanent_keep_items": []
+  },
+  "pet": {
+    "food_quality": "NORMAL"
+  },
+  "king": {
+    "mode": "MANUAL",
+    "auto_sell": false
+  },
+  "upgrade": {
+    "max_parallel": 2,
+    "use_gems": false,
+    "request_guild_help": true
+  },
+  "repair": {
+    "currency": "GOLD",
+    "use_gems": false
+  },
+  "display": {
+    "managed_by_game": true,
+    "override_only_when_needed": true
+  }
+}

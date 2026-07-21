@@ -1,0 +1,15 @@
+Lost City Planner v0.8.1 Reserve Zero Fix
+
+原因：
+Python 的 candidates[:-0] 會回傳空清單，
+因此 reserve_party_count=0 時仍錯誤變成沒有可用隊伍。
+
+安裝：
+1. 解壓縮。
+2. 將 events、tests 複製到：
+   C:\PythonProject\ShopTitansAutomationSuiteV2
+3. 選擇合併與覆蓋。
+
+測試：
+cd /d C:\PythonProject\ShopTitansAutomationSuiteV2
+py -m tests.test_lost_city_planner

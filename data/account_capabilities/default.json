@@ -1,0 +1,5 @@
+{
+  "production_queue_capacity": 10,
+  "expedition_team_capacity": 8,
+  "furniture_upgrade_slots": 2
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.4.5",
+  "sprint": "4.5",
+  "name": "Runtime Decision Bridge",
+  "risk": "low",
+  "live_input_enabled": false,
+  "added": [
+    "runtime/decision_models.py",
+    "runtime/decision_bridge.py",
+    "runtime/dry_run_executor.py",
+    "tests/test_runtime_decision_models.py",
+    "tests/test_runtime_decision_bridge.py",
+    "tests/test_dry_run_runtime_executor.py",
+    "docs/SPRINT_4_5.md"
+  ],
+  "modified": [
+    "runtime/__init__.py",
+    "CHANGELOG.md"
+  ],
+  "focused_test_result": "48 passed"
+}

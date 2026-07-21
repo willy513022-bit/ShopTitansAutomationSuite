@@ -1,0 +1,22 @@
+{
+  "event_id": "worker_offer",
+  "display_name": "Worker Item Offer",
+  "category": "interrupt",
+  "priority": 90,
+  "interrupt": true,
+  "trigger": {
+    "screen_hint": "worker_item_offer"
+  },
+  "actions": [
+    {
+      "type": "EVALUATE_GOLD_PURCHASE"
+    },
+    {
+      "type": "BUY_OR_DECLINE"
+    },
+    {
+      "type": "RETURN_TO_PREVIOUS"
+    }
+  ],
+  "notes": "Observed in user-provided gameplay video. Purchase requires planner approval."
+}

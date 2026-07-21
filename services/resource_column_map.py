@@ -1,0 +1,15 @@
+RESOURCE_COLUMN_MAP: dict[str, str] = {
+    "Y": "Iron",
+    "Z": "Wood",
+    "AA": "Leather",
+    "AB": "Herbs",
+    "AC": "Steel",
+    "AD": "Ironwood",
+    "AE": "Fabric",
+    "AF": "Oil",
+    "AG": "Ether",
+    "AH": "Jewels",
+    "AI": "Essence",
+    "AJ": "Dragonmarks",
+    "AK": "Stardust",
+}

@@ -1,0 +1,10 @@
+opencv-python>=4.12
+numpy>=2.2,<3
+mss>=10
+pygetwindow>=0.0.9
+pyautogui>=0.9.54
+pillow>=12
+customtkinter>=6
+rapidocr-onnxruntime>=1.4.4
+rapidfuzz>=3.14
+openpyxl>=3.1

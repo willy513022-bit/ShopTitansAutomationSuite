@@ -1,0 +1,22 @@
+{
+  "event_id": "daily_free_spin",
+  "display_name": "Daily Free Spin",
+  "category": "daily",
+  "priority": 60,
+  "interrupt": false,
+  "trigger": {
+    "screen_hint": "spin_machine_free_spin"
+  },
+  "actions": [
+    {
+      "type": "SPIN_FREE"
+    },
+    {
+      "type": "COLLECT_REWARD"
+    },
+    {
+      "type": "RETURN_TO_TOWN"
+    }
+  ],
+  "notes": "One free daily spin, as described and shown by the user."
+}

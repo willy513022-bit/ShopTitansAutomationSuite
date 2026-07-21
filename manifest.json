@@ -1,0 +1,16 @@
+{
+  "name": "ShopTitansAutomationSuiteV2",
+  "version": "0.9.8-alpha.1",
+  "package": "NavigationEngineV1",
+  "install_script": "install_navigation_engine_v1.py",
+  "tests": [
+    "tests.test_navigation_graph",
+    "tests.test_navigation_state_tracker",
+    "tests.test_navigator",
+    "tests.test_navigation_validator",
+    "tests.test_vision_state"
+  ],
+  "demo": "examples.navigation_demo",
+  "runtime_clicking_enabled": false,
+  "vision_validation_required": true
+}

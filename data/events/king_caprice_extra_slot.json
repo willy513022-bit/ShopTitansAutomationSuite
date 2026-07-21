@@ -1,0 +1,19 @@
+{
+  "event_id": "king_caprice_extra_slot",
+  "display_name": "King's Caprice Extra Craft Slot",
+  "category": "activity",
+  "priority": 70,
+  "interrupt": false,
+  "trigger": {
+    "screen_hint": "king_caprice_extra_craft_slot"
+  },
+  "actions": [
+    {
+      "type": "SYNC_EXTRA_CRAFT_SLOT"
+    },
+    {
+      "type": "RESOLVE_REQUIRED_COMPONENTS"
+    }
+  ],
+  "notes": "Observed in user-provided gameplay video. Required crafted components may be produced or purchased with gold."
+}

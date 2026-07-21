@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "screens": [
+    "UNKNOWN",
+    "SHOP",
+    "PRODUCTION",
+    "CRAFT",
+    "FUSION",
+    "QUEST",
+    "GUILD",
+    "PET",
+    "UPGRADE",
+    "KING",
+    "MODAL"
+  ],
+  "notes": [
+    "CRAFT and FUSION are treated as Production UI modes.",
+    "Every transition must be revalidated by Vision.",
+    "UNKNOWN is never used as a valid navigation start."
+  ]
+}

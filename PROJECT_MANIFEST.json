@@ -1,0 +1,10 @@
+{
+  "project": "ShopTitansAutomationSuite_reference",
+  "generated_files": 62,
+  "python_compile_errors": [],
+  "notes": [
+    "header.png not included because the local template was not uploaded as a standalone file",
+    "items.json and recipes.json contain sample GameData only",
+    "window_position.py must be replaced with the user calibrated DPI/multi-monitor conversion"
+  ]
+}
