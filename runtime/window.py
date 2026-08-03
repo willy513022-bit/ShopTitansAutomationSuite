@@ -1,15 +1,12 @@
+"""
+Legacy compatibility module.
 
-from dataclasses import dataclass
-@dataclass
-class WindowInfo:
-    title:str
-    left:int
-    top:int
-    width:int
-    height:int
+請改用 runtime.window_manager。
+"""
 
-class WindowManager:
-    def __init__(self,window=None):
-        self._window=window
-    def get_window(self):
-        return self._window
+from .window_manager import WindowBounds, WindowManager
+
+__all__ = [
+    "WindowBounds",
+    "WindowManager",
+]
