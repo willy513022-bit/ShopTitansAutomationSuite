@@ -18,34 +18,24 @@ class NavigationTargetResolverTests(
             NavigationTargetResolver()
         )
 
-    def test_open_production_target(self):
+    def test_open_craft_target(self):
         target = self.resolver.resolve_action(
-            TransitionAction.OPEN_PRODUCTION
+            TransitionAction.OPEN_CRAFT
         )
 
         self.assertEqual(
             target.target_name,
-            "production_button",
+            "craft_button",
         )
 
-    def test_switch_to_craft_target(self):
+    def test_open_fusion_target(self):
         target = self.resolver.resolve_action(
-            TransitionAction.SWITCH_TO_CRAFT
+            TransitionAction.OPEN_FUSION
         )
 
         self.assertEqual(
             target.target_name,
-            "craft_tab",
-        )
-
-    def test_switch_to_fusion_target(self):
-        target = self.resolver.resolve_action(
-            TransitionAction.SWITCH_TO_FUSION
-        )
-
-        self.assertEqual(
-            target.target_name,
-            "fusion_tab",
+            "fusion_button",
         )
 
     def test_back_target(self):
@@ -61,10 +51,10 @@ class NavigationTargetResolverTests(
     def test_resolve_transition(self):
         transition = Transition(
             source=Screen.SHOP,
-            target=Screen.PRODUCTION,
+            target=Screen.CRAFT,
             action=(
                 TransitionAction
-                .OPEN_PRODUCTION
+                .OPEN_CRAFT
             ),
         )
 
@@ -77,24 +67,49 @@ class NavigationTargetResolverTests(
 
         self.assertEqual(
             target.action,
-            TransitionAction.OPEN_PRODUCTION,
+            TransitionAction.OPEN_CRAFT,
         )
 
         self.assertEqual(
             target.target_name,
-            "production_button",
+            "craft_button",
         )
 
     def test_all_default_actions_are_registered(
         self,
     ):
-        for action in TransitionAction:
+        resolver = NavigationTargetResolver()
+
+        for action in (
+            TransitionAction.OPEN_CRAFT,
+            TransitionAction.OPEN_FUSION,
+            TransitionAction.BACK,
+            TransitionAction.OPEN_QUEST,
+            TransitionAction.OPEN_GUILD,
+            TransitionAction.OPEN_PET,
+            TransitionAction.OPEN_UPGRADE,
+            TransitionAction.OPEN_KING,
+            TransitionAction.CLOSE_MODAL,
+        ):
             self.assertTrue(
-                self.resolver.has_action(
-                    action
-                ),
+                resolver.has_action(action),
                 action.value,
             )
+
+    def test_switch_actions_are_not_default_targets(
+        self,
+    ):
+        self.assertFalse(
+            self.resolver.has_action(
+                TransitionAction.SWITCH_TO_CRAFT
+            )
+        )
+
+        self.assertFalse(
+            self.resolver.has_action(
+                TransitionAction.SWITCH_TO_FUSION
+            )
+        )
 
     def test_custom_mapping_can_be_used(self):
         resolver = NavigationTargetResolver(
@@ -125,7 +140,7 @@ class NavigationTargetResolverTests(
 
         with self.assertRaises(KeyError):
             resolver.resolve_action(
-                TransitionAction.OPEN_PRODUCTION
+                TransitionAction.OPEN_CRAFT
             )
 
     def test_rejects_non_action(self):
@@ -133,7 +148,7 @@ class NavigationTargetResolverTests(
             TypeError
         ):
             self.resolver.resolve_action(
-                "OPEN_PRODUCTION"
+                "OPEN_CRAFT"
             )
 
 

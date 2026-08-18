@@ -5,6 +5,7 @@ from navigation import (
     NavigationStateTracker,
     Navigator,
     Screen,
+    TransitionAction,
     build_default_screen_graph,
 )
 from runtime.craft_execution import (
@@ -56,7 +57,7 @@ class NavigationDryRunExecutorTests(
             decision
         )
 
-    def test_shop_to_craft_resolves_two_targets(
+    def test_shop_to_craft_resolves_one_target(
         self,
     ):
         plan = self.make_plan()
@@ -68,7 +69,7 @@ class NavigationDryRunExecutorTests(
 
         self.assertEqual(
             result.navigation_step_count,
-            2,
+            1,
         )
 
         self.assertEqual(
@@ -78,12 +79,11 @@ class NavigationDryRunExecutorTests(
                 in result.navigation_steps
             ),
             (
-                "production_button",
-                "craft_tab",
+                "craft_button",
             ),
         )
 
-    def test_first_step_is_open_production(
+    def test_first_step_is_open_craft(
         self,
     ):
         plan = self.make_plan()
@@ -102,7 +102,7 @@ class NavigationDryRunExecutorTests(
 
         self.assertEqual(
             first.target_name,
-            "production_button",
+            "craft_button",
         )
 
         self.assertFalse(
@@ -110,35 +110,8 @@ class NavigationDryRunExecutorTests(
         )
 
         self.assertIn(
-            "OPEN_PRODUCTION",
+            "OPEN_CRAFT",
             first.description,
-        )
-
-    def test_second_step_is_switch_to_craft(
-        self,
-    ):
-        plan = self.make_plan()
-
-        result = (
-            NavigationDryRunExecutor()
-            .execute(plan)
-        )
-
-        second = result.navigation_steps[1]
-
-        self.assertEqual(
-            second.step_index,
-            2,
-        )
-
-        self.assertEqual(
-            second.target_name,
-            "craft_tab",
-        )
-
-        self.assertIn(
-            "SWITCH_TO_CRAFT",
-            second.description,
         )
 
     def test_already_on_craft_has_no_navigation(
@@ -175,12 +148,12 @@ class NavigationDryRunExecutorTests(
 
         self.assertEqual(
             len(plan.steps),
-            6,
+            5,
         )
 
         self.assertEqual(
             result.navigation_step_count,
-            2,
+            1,
         )
 
     def test_navigation_step_keeps_transition(
@@ -208,7 +181,12 @@ class NavigationDryRunExecutorTests(
 
         self.assertEqual(
             first.transition.target,
-            Screen.PRODUCTION,
+            Screen.CRAFT,
+        )
+
+        self.assertEqual(
+            first.transition.action,
+            TransitionAction.OPEN_CRAFT,
         )
 
     def test_navigate_step_requires_transition(

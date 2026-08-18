@@ -9,9 +9,8 @@ from navigation import Transition, TransitionAction
 
 DEFAULT_NAVIGATION_TARGETS = MappingProxyType(
     {
-        TransitionAction.OPEN_PRODUCTION: "production_button",
-        TransitionAction.SWITCH_TO_CRAFT: "craft_tab",
-        TransitionAction.SWITCH_TO_FUSION: "fusion_tab",
+        TransitionAction.OPEN_CRAFT: "craft_button",
+        TransitionAction.OPEN_FUSION: "fusion_button",
         TransitionAction.BACK: "back_button",
         TransitionAction.OPEN_QUEST: "quest_button",
         TransitionAction.OPEN_GUILD: "guild_button",

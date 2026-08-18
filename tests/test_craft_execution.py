@@ -5,6 +5,7 @@ from navigation import (
     NavigationStateTracker,
     Navigator,
     Screen,
+    TransitionAction,
     build_default_screen_graph,
 )
 from runtime.craft_execution import (
@@ -17,19 +18,15 @@ class CraftExecutionPlannerTests(
     unittest.TestCase
 ):
     def setUp(self):
-        self.tracker = (
-            NavigationStateTracker()
-        )
+        self.tracker = NavigationStateTracker()
 
         self.navigator = Navigator(
             build_default_screen_graph(),
             self.tracker,
         )
 
-        self.planner = (
-            CraftExecutionPlanner(
-                self.navigator
-            )
+        self.planner = CraftExecutionPlanner(
+            self.navigator
         )
 
     def make_decision(
@@ -45,9 +42,7 @@ class CraftExecutionPlannerTests(
             reason="Blueprint test",
             payload={
                 "target_item": target_item,
-                "requested_count": (
-                    requested_count
-                ),
+                "requested_count": requested_count,
             },
         )
 
@@ -75,9 +70,18 @@ class CraftExecutionPlannerTests(
             plan.navigation.screens(),
             (
                 Screen.SHOP,
-                Screen.PRODUCTION,
                 Screen.CRAFT,
             ),
+        )
+
+        self.assertEqual(
+            len(plan.navigation.transitions),
+            1,
+        )
+
+        self.assertEqual(
+            plan.navigation.transitions[0].action,
+            TransitionAction.OPEN_CRAFT,
         )
 
         self.assertTrue(
@@ -102,11 +106,27 @@ class CraftExecutionPlannerTests(
         )
 
         self.assertEqual(
-            kinds[:2],
+            kinds,
             (
                 CraftExecutionStepKind.NAVIGATE,
-                CraftExecutionStepKind.NAVIGATE,
+                CraftExecutionStepKind.FIND_ITEM,
+                CraftExecutionStepKind.SELECT_ITEM,
+                CraftExecutionStepKind.START_CRAFT,
+                CraftExecutionStepKind.VERIFY_CRAFT_STARTED,
             ),
+        )
+
+        first = plan.steps[0]
+
+        self.assertIsNotNone(
+            first.transition
+        )
+
+        assert first.transition is not None
+
+        self.assertEqual(
+            first.transition.action,
+            TransitionAction.OPEN_CRAFT,
         )
 
     def test_craft_steps_follow_navigation(
@@ -176,8 +196,7 @@ class CraftExecutionPlannerTests(
             base_priority=50,
             reason="test",
             payload={
-                "target_item":
-                    "Squire Sword",
+                "target_item": "Squire Sword",
             },
         )
 
@@ -237,9 +256,7 @@ class CraftExecutionPlannerTests(
     def test_requires_reliable_navigation_state(
         self,
     ):
-        decision = (
-            self.make_decision()
-        )
+        decision = self.make_decision()
 
         with self.assertRaises(
             RuntimeError

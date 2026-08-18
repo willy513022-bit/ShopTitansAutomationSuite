@@ -7,9 +7,14 @@ from .screen import Screen
 
 
 class TransitionAction(str, Enum):
-    OPEN_PRODUCTION = "OPEN_PRODUCTION"
+    # Direct entry points from the Shop screen.
+    OPEN_CRAFT = "OPEN_CRAFT"
+    OPEN_FUSION = "OPEN_FUSION"
+
+    # Switching is still useful when already inside production UI.
     SWITCH_TO_CRAFT = "SWITCH_TO_CRAFT"
     SWITCH_TO_FUSION = "SWITCH_TO_FUSION"
+
     BACK = "BACK"
 
     OPEN_QUEST = "OPEN_QUEST"
@@ -30,6 +35,11 @@ class Transition:
 
     def validate(self) -> None:
         if self.source == self.target:
-            raise ValueError("transition source and target must differ")
+            raise ValueError(
+                "transition source and target must differ"
+            )
+
         if self.cost <= 0:
-            raise ValueError("transition cost must be positive")
+            raise ValueError(
+                "transition cost must be positive"
+            )

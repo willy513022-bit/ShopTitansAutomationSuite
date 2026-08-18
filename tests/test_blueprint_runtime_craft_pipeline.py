@@ -8,6 +8,7 @@ from navigation import (
     NavigationStateTracker,
     Navigator,
     Screen,
+    TransitionAction,
     build_default_screen_graph,
 )
 from planner.blueprint_candidate import BlueprintCandidate
@@ -184,8 +185,15 @@ def test_runtime_craft_plan_from_shop():
 
     assert plan.navigation.screens() == (
         Screen.SHOP,
-        Screen.PRODUCTION,
         Screen.CRAFT,
+    )
+    assert len(
+    plan.navigation.transitions
+    ) == 1
+
+    assert (
+        plan.navigation.transitions[0].action
+        is TransitionAction.OPEN_CRAFT
     )
 
 
@@ -211,7 +219,6 @@ def test_runtime_craft_plan_contains_safe_steps():
     )
 
     assert kinds == (
-        CraftExecutionStepKind.NAVIGATE,
         CraftExecutionStepKind.NAVIGATE,
         CraftExecutionStepKind.FIND_ITEM,
         CraftExecutionStepKind.SELECT_ITEM,
