@@ -11,7 +11,7 @@ class TestKnowledgeBase(unittest.TestCase):
         self.assertGreaterEqual(summary["events"], 6)
         self.assertEqual(summary["recipes"], 0)
         self.assertEqual(summary["templates"], 0)
-        self.assertEqual(summary["clickmaps"], 1)
+        self.assertEqual(summary["clickmaps"], 2)
 
 
 if __name__ == "__main__":
