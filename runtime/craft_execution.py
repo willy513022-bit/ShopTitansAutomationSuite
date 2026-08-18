@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 from core.planner_decision import PlannerDecision
-from navigation import Navigator, Screen
+from navigation import Navigator, Screen, Transition
 from navigation.navigator import NavigationPlan
 
 
@@ -21,7 +21,26 @@ class CraftExecutionStep:
     kind: CraftExecutionStepKind
     description: str
     target_item: str | None = None
+    transition: Transition | None = None
 
+    def __post_init__(self) -> None:
+        if (
+            self.kind
+            is CraftExecutionStepKind.NAVIGATE
+            and self.transition is None
+        ):
+            raise ValueError(
+                "NAVIGATE step requires transition"
+            )
+
+        if (
+            self.kind
+            is not CraftExecutionStepKind.NAVIGATE
+            and self.transition is not None
+        ):
+            raise ValueError(
+                "only NAVIGATE step may carry transition"
+            )
 
 @dataclass(frozen=True, slots=True)
 class CraftExecutionPlan:
@@ -138,6 +157,7 @@ class CraftExecutionPlanner:
                         f"-> {transition.target.value} "
                         f"via {transition.action.value}"
                     ),
+                    transition=transition,
                 )
             )
 
